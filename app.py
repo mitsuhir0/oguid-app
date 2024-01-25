@@ -13,11 +13,15 @@ def convert(input: str, func) -> str:
 
 
 def gen_func(input: str, convert_to:str):
-    """
-    1行目の文字からidのタイプを推測し、ユーザーの指定するタイプに変換する関数を作る
-    inputには email, caddie, web serviceの3通り
-    outputも email, caddie, web serviceの3通り
-    """
+    """1行目の文字からidのタイプを推測し、ユーザーの指定するタイプに変換する関数を作る
+
+    Args:
+        input (str): email, caddie, web serviceの3通り
+        convert_to (str): email, caddie, web serviceの3通り
+
+    Returns:
+        func
+    """    
     lines = input.splitlines()
     if lines == []:
         return passfunc
