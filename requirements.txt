@@ -16,7 +16,7 @@ markdown-it-py==3.0.0
 MarkupSafe==2.1.4
 mdurl==0.1.2
 numpy==1.26.3
-oguid @ git+https://github.com/mitsuhir0/ogu-id-converter@b18a04f5b461d20ecbedb1eea946a0248c8e5408
+oguid @ git+https://github.com/mitsuhir0/ogu-id-converter@75da3dff397ef57f09efa89face5f9fbf17a0834
 packaging==23.2
 pandas==2.2.0
 pillow==10.2.0

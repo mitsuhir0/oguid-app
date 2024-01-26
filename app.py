@@ -28,22 +28,17 @@ def gen_func(input: str, convert_to:str):
 
     convert_from = oguid.guess_id_type(lines[0])
 
-    select = (convert_from, convert_to)
-    match select:
-        case ("email", "OGU-Caddie"):
-            result = oguid.email_to_caddie
-        case ("email", "OGU Web Service"):
-            result =  oguid.email_to_webservice
-        case ("OGU-Caddie", "email"):
-            result =  oguid.caddie_to_email
-        case ("OGU-Caddie", "OGU Web Service"):
-            result =  oguid.caddie_to_webservice
-        case ("OGU Web Service", "email"):
-            result = oguid.webservice_to_email
-        case ("OGU Web Service", "OGU-Caddie"):
-            result = oguid.webservice_to_caddie
-        case (_, _):
-            result = passfunc
+    dic = {
+        "email": "email",
+        "OGU-Caddie": "caddie",
+        "OGU Web Service": "web"
+    }
+
+    result = oguid.convert(source=dic[convert_from], target=dic[convert_to])
+
+    if result is None:
+        result = passfunc
+
     return result
 
 
