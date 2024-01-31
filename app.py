@@ -28,6 +28,9 @@ def gen_func(input: str, convert_to:str):
 
     convert_from = oguid.guess_id_type(lines[0])
 
+    if convert_from is None:
+        return passfunc
+
     dic = {
         "email": "email",
         "OGU-Caddie": "caddie",
@@ -75,7 +78,7 @@ with col2:
         case _:
             id_types = [email, caddie, web]
     
-    if id_type is "":
+    if id_type == "":
         bold_id_type = ""
     else:
         bold_id_type = "**" + id_type + "**"
